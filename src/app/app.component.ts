@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showBtn: boolean = false;
+  showBtnTitle: string = 'Show counter';
+  hideBtnTitle: string = 'Hide counter';
 
   toggleComponents() {
     this.showBtn = !this.showBtn;

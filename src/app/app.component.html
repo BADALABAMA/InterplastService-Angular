@@ -1,7 +1,11 @@
 <div class="app">
   <div class="btn-container">
-    <button (click)="toggleComponents()" *ngIf="!showBtn">Show Counter</button>
-    <button (click)="toggleComponents()" *ngIf="showBtn">Hide</button>
+    <button (click)="toggleComponents()" *ngIf="!showBtn">
+      {{ showBtnTitle }}
+    </button>
+    <button (click)="toggleComponents()" *ngIf="showBtn">
+      {{ hideBtnTitle }}
+    </button>
   </div>
   <app-header *ngIf="showBtn"></app-header>
 </div>
