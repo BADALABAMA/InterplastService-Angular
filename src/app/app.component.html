@@ -1,9 +1,17 @@
 <div class="app">
   <div class="btn-container">
-    <button (click)="toggleComponents()" *ngIf="!showBtn">
+    <button
+      [title]="showBtnTitle"
+      (click)="toggleComponents()"
+      *ngIf="!showBtn"
+    >
       {{ showBtnTitle }}
     </button>
-    <button (click)="toggleComponents()" *ngIf="showBtn">
+    <button
+      [title]="hideBtnTitle`"
+      (click)="toggleComponents()"
+      *ngIf="showBtn"
+    >
       {{ hideBtnTitle }}
     </button>
   </div>
