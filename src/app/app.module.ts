@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -10,8 +11,15 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, NavComponent, MainComponent, FooterComponent, ProductCardComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    NavComponent,
+    MainComponent,
+    FooterComponent,
+    ProductCardComponent,
+  ],
+  imports: [BrowserModule, FormsModule, NgxPaginationModule],
   providers: [],
   bootstrap: [AppComponent],
 })

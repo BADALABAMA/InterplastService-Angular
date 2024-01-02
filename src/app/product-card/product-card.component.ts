@@ -109,5 +109,11 @@ export class ProductCardComponent implements OnInit {
     ),
   ];
   buyBtnTitle = 'Buy';
+  productOnPage: number = 8;
+  page = 1;
+
+  handlePageChange(event: any) {
+    this.page = event;
+  }
   ngOnInit(): void {}
 }

@@ -37,3 +37,8 @@
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
