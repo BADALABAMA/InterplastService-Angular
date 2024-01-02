@@ -1,0 +1,19 @@
+<div class="nav-container">
+  <form (ngSubmit)="getSearch()" class="form">
+    <input
+      type="text"
+      [placeholder]="inputPlaceholder"
+      [(ngModel)]="search"
+      name="search"
+      class="search-input"
+    /><button type="submit" class="search-btn">{{ searchBtnTitle }}</button>
+  </form>
+
+  <div class="btns-container">
+    <a href="#" class="login-btn">{{ loginBtnTitle }}</a>
+    <a href="#" class="admin-panel-btn" [hidden]="isHidden">{{
+      adminPanelBtnTitle
+    }}</a>
+    <a href="#" class="cart-btn">{{ cartBtnTitle }}</a>
+  </div>
+</div>

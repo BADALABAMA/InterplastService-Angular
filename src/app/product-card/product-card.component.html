@@ -1,0 +1,9 @@
+<div class="products">
+  <div *ngFor="let p of products" class="product">
+    <img [src]="p.getImageURL()" alt="something went" class="image" />
+    <h1 class="title">{{ p.getTitle() }}</h1>
+    <h2 class="price">{{ p.getPrice() }}₴</h2>
+    <p class="">{{ p.getDescription() }}</p>
+    <button class="button">{{ buyBtnTitle }}</button>
+  </div>
+</div>
