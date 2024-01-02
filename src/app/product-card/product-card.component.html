@@ -13,6 +13,7 @@
     <button class="button">{{ buyBtnTitle }}</button>
   </div>
 </div>
+
 <pagination-controls
   class="pagination"
   previousLabel="Prev"
@@ -20,3 +21,5 @@
   [responsive]="true"
   (pageChange)="handlePageChange($event)"
 ></pagination-controls>
+
+<ngx-spinner [type]="spinnerType"></ngx-spinner>

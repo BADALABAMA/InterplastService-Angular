@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/schema/Product/Product';
+
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
@@ -111,9 +113,23 @@ export class ProductCardComponent implements OnInit {
   buyBtnTitle = 'Buy';
   productOnPage: number = 8;
   page = 1;
+  spinnerType: string;
+
+  constructor(private spinnerService: NgxSpinnerService) {
+    this.spinnerType = 'ball-fussion';
+  }
+  showSpinner() {
+    this.spinnerService.show();
+    setTimeout(() => {
+      this.spinnerService.hide();
+    }, 1000);
+  }
 
   handlePageChange(event: any) {
-    this.page = event;
+    this.showSpinner();
+    setTimeout(() => {
+      this.page = event;
+    }, 1000);
   }
   ngOnInit(): void {}
 }
