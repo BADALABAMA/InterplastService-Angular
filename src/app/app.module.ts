@@ -4,15 +4,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProductSearchService } from './product-search.service';
+import { ProductSearchService } from './services/product-search.service';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './ components/header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NavComponent } from './nav/nav.component';
-import { MainComponent } from './main/main.component';
-import { FooterComponent } from './footer/footer.component';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { NavComponent } from './ components/nav/nav.component';
+import { MainComponent } from './ components/main/main.component';
+import { FooterComponent } from './ components/footer/footer.component';
+import { ProductCardComponent } from './ components/product-card/product-card.component';
 
 @NgModule({
   declarations: [

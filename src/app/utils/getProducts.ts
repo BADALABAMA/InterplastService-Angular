@@ -1,4 +1,4 @@
-import { Product } from 'src/schema/Product/Product';
+import { Product } from 'src/app/schema/Product/Product';
 
 export const getProducts = () => {
   const products = [

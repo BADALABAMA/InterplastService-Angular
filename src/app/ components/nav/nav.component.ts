@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductController } from '../product-controller.service';
-import { ProductSearchService } from '../product-search.service';
-import { ProductService } from '../product.service';
-import { Product } from 'src/schema/Product/Product';
+import { ProductController } from '../../services/product-controller.service';
+import { ProductSearchService } from '../../services/product-search.service';
+import { ProductService } from '../../services/product.service';
+import { Product } from 'src/app/schema/Product/Product';
 
 @Component({
   selector: 'app-nav',

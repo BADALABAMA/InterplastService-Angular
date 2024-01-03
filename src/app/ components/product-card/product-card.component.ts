@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductSearchService } from '../product-search.service';
-import { ProductService } from '../product.service';
-import { getProducts } from 'src/utils/getProducts';
-import { Product } from 'src/schema/Product/Product';
+import { ProductSearchService } from '../../services/product-search.service';
+import { ProductService } from '../../services/product.service';
+import { getProducts } from 'src/app/utils/getProducts';
+import { Product } from 'src/app/schema/Product/Product';
 
 import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
