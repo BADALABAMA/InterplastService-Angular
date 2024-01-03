@@ -1,7 +1,7 @@
 <div class="products">
   <div
     *ngFor="
-      let product of products
+      let product of (foundProducts.length > 0 ? foundProducts : products)
         | paginate : { itemsPerPage: productOnPage, currentPage: page }
     "
     class="product"

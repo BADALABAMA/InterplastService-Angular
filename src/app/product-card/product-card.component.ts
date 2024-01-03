@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductSearchService } from '../product-search.service';
+import { ProductService } from '../product.service';
+import { getProducts } from 'src/utils/getProducts';
 import { Product } from 'src/schema/Product/Product';
 
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -8,116 +11,23 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./product-card.component.css'],
 })
 export class ProductCardComponent implements OnInit {
-  products = [
-    new Product(
-      '0001',
-      'product1',
-      true,
-      'description1',
-      1000,
-      10,
-      'man1',
-      'assets/image.png'
-    ),
-    new Product(
-      '0002',
-      'product2',
-      true,
-      'description2',
-      2000,
-      20,
-      'man2',
-      'assets/image.png'
-    ),
-    new Product(
-      '0003',
-      'product3',
-      false,
-      'description3',
-      300,
-      30,
-      'man3',
-      'assets/image.png'
-    ),
-    new Product(
-      '0004',
-      'product4',
-      true,
-      'description4',
-      4000,
-      40,
-      'man4',
-      'assets/image.png'
-    ),
-    new Product(
-      '0005',
-      'product5',
-      true,
-      'description5',
-      5000,
-      50,
-      'man5',
-      'assets/image.png'
-    ),
-    new Product(
-      '0006',
-      'product6',
-      true,
-      'description6',
-      6000,
-      60,
-      'man6',
-      'assets/image.png'
-    ),
-    new Product(
-      '0007',
-      'product7',
-      true,
-      'description7',
-      7000,
-      70,
-      'man7',
-      'assets/image.png'
-    ),
-    new Product(
-      '0008',
-      'product8',
-      true,
-      'description8',
-      8000,
-      80,
-      'man8',
-      'assets/image.png'
-    ),
-    new Product(
-      '0009',
-      'product9',
-      true,
-      'description9',
-      9000,
-      90,
-      'man9',
-      'assets/image.png'
-    ),
-    new Product(
-      '0010',
-      'product10',
-      true,
-      'description10',
-      10000,
-      100,
-      'man10',
-      'assets/image.png'
-    ),
-  ];
+  products = getProducts();
+
   buyBtnTitle = 'Buy';
   productOnPage: number = 8;
   page = 1;
   spinnerType: string;
+  foundProducts: Product[] = [];
+  products$ = this.productService.products$;
 
-  constructor(private spinnerService: NgxSpinnerService) {
+  constructor(
+    private spinnerService: NgxSpinnerService,
+    private productSearchService: ProductSearchService,
+    private productService: ProductService
+  ) {
     this.spinnerType = 'ball-fussion';
   }
+
   showSpinner() {
     this.spinnerService.show();
     setTimeout(() => {
@@ -131,5 +41,23 @@ export class ProductCardComponent implements OnInit {
       this.page = event;
     }, 1000);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // Search product
+
+    this.productSearchService.foundProducts$.subscribe((products) => {
+      if (this.productService.searchMode) {
+        this.foundProducts = products;
+        console.log('Found Products:', this.foundProducts);
+      }
+    });
+
+    // Add NewProduct
+
+    this.productService.products$.subscribe((products) => {
+      if (!this.productService.searchMode) {
+        this.products = products;
+        console.log('Add new product:', this.products);
+      }
+    });
+  }
 }

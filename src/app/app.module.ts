@@ -4,6 +4,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductSearchService } from './product-search.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -30,7 +31,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
   ],
-  providers: [],
+  providers: [ProductSearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
