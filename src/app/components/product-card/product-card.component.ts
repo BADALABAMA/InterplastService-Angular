@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductSearchService } from '../../services/product-search.service';
-import { ProductService } from '../../services/product.service';
+import { ProductSearchService } from 'src/app/services/product-search.service';
+import { ProductService } from 'src/app/services/product.service';
 import { getProducts } from 'src/app/utils/getProducts';
 import { Product } from 'src/app/schema/Product/Product';
 
 import { NgxSpinnerService } from 'ngx-spinner';
+
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
@@ -16,7 +17,7 @@ export class ProductCardComponent implements OnInit {
   buyBtnTitle = 'Buy';
   productOnPage: number = 8;
   page = 1;
-  spinnerType: string;
+  spinnerType: string = 'ball-fussion';
   foundProducts: Product[] = [];
   products$ = this.productService.products$;
 
@@ -24,9 +25,7 @@ export class ProductCardComponent implements OnInit {
     private spinnerService: NgxSpinnerService,
     private productSearchService: ProductSearchService,
     private productService: ProductService
-  ) {
-    this.spinnerType = 'ball-fussion';
-  }
+  ) {}
 
   showSpinner() {
     this.spinnerService.show();

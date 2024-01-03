@@ -7,12 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductSearchService } from './services/product-search.service';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './ components/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { FormsModule } from '@angular/forms';
-import { NavComponent } from './ components/nav/nav.component';
-import { MainComponent } from './ components/main/main.component';
-import { FooterComponent } from './ components/footer/footer.component';
-import { ProductCardComponent } from './ components/product-card/product-card.component';
+import { NavComponent } from './components/nav/nav.component';
+import { MainComponent } from './components/main/main.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
