@@ -5,12 +5,21 @@
         | paginate : { itemsPerPage: productOnPage, currentPage: page }
     "
     class="product"
+    [ngStyle]="{
+      opacity: product.getAvailability() === true ? '1' : '0.5'
+    }"
   >
     <img [src]="product.getImageURL()" alt="something went" class="image" />
     <h1 class="title">{{ product.getTitle() }}</h1>
     <h2 class="price">{{ product.getPrice() }}₴</h2>
     <p class="">{{ product.getDescription() }}</p>
-    <button class="button">{{ buyBtnTitle }}</button>
+
+    <button
+      class="button"
+      [disabled]="product.getAvailability() === true ? false : true"
+    >
+      {{ buyBtnTitle }}
+    </button>
   </div>
 </div>
 

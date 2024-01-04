@@ -10,7 +10,9 @@
   </form>
 
   <div class="btns-container">
-    <a href="#" class="login-btn">{{ loginBtnTitle }}</a>
+    <a routerLink="/authorization" (click)="login()" class="login-btn">{{
+      loginBtnTitle
+    }}</a>
     <a href="#" class="admin-panel-btn" [hidden]="isHidden">{{
       adminPanelBtnTitle
     }}</a>

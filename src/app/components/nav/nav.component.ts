@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductController } from '../../services/product-controller.service';
 import { ProductSearchService } from '../../services/product-search.service';
 import { ProductService } from '../../services/product.service';
+import { AuthorizationService } from 'src/app/services/authorization.service';
 import { Product } from 'src/app/schema/Product/Product';
 
 @Component({
@@ -22,7 +23,8 @@ export class NavComponent implements OnInit {
   constructor(
     private productController: ProductController,
     private productSearchService: ProductSearchService,
-    private productService: ProductService
+    private productService: ProductService,
+    private authorizationService: AuthorizationService
   ) {}
   ngOnInit(): void {}
 
@@ -56,6 +58,10 @@ export class NavComponent implements OnInit {
   //     'assets/image.png'
   //   );
   // }
+
+  login() {
+    this.authorizationService.toggleAuthorizationWindow();
+  }
   showAdminPanelBtn() {
     this.isHidden = false;
   }

@@ -1,0 +1,21 @@
+<div class="container">
+  <form (ngSubmit)="login()">
+    <input
+      type="text"
+      class="email"
+      name="email"
+      [(ngModel)]="email"
+      [placeholder]="emailPlaceholder"
+    />
+    <input
+      type="password"
+      class="password"
+      name="password"
+      [(ngModel)]="password"
+      [placeholder]="passwordPlaceholder"
+    />
+    <button type="submit" class="submit-btn">
+      {{ btnTitle }}
+    </button>
+  </form>
+</div>
