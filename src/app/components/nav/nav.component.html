@@ -10,12 +10,12 @@
   </form>
 
   <div class="btns-container">
-    <a routerLink="/authorization" (click)="login()" class="login-btn">{{
-      loginBtnTitle
-    }}</a>
+    <a (click)="navigate()" class="login-btn">{{ loginBtnTitle }}</a>
     <a href="#" class="admin-panel-btn" [hidden]="isHidden">{{
       adminPanelBtnTitle
     }}</a>
     <a href="#" class="cart-btn">{{ cartBtnTitle }}</a>
   </div>
 </div>
+
+<ngx-spinner [type]="spinnerType"></ngx-spinner>

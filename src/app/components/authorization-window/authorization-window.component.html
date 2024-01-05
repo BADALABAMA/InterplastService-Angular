@@ -1,21 +1,22 @@
-<div class="container">
-  <form (ngSubmit)="login()">
+<div class="modal">
+  <form (ngSubmit)="login()" class="form">
     <input
       type="text"
-      class="email"
+      class="input"
       name="email"
       [(ngModel)]="email"
       [placeholder]="emailPlaceholder"
     />
     <input
       type="password"
-      class="password"
+      class="input"
       name="password"
       [(ngModel)]="password"
       [placeholder]="passwordPlaceholder"
     />
-    <button type="submit" class="submit-btn">
+    <button type="submit" class="button">
       {{ btnTitle }}
     </button>
   </form>
 </div>
+<ngx-spinner [type]="spinnerType"></ngx-spinner>

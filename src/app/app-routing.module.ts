@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthorizationWindowComponent } from './components/authorization-window/authorization-window.component';
-import { AppComponent } from './app.component';
+
+import { AppContainerComponent } from './components/app-container/app-container.component';
 const routes: Routes = [
   {
     path: '',
 
-    component: AppComponent,
+    component: AppContainerComponent,
   },
   {
     path: 'authorization',

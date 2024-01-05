@@ -15,6 +15,7 @@ import { MainComponent } from './components/main/main.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { AuthorizationWindowComponent } from './components/authorization-window/authorization-window.component';
+import { AppContainerComponent } from './components/app-container/app-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { AuthorizationWindowComponent } from './components/authorization-window/
     FooterComponent,
     ProductCardComponent,
     AuthorizationWindowComponent,
+    AppContainerComponent,
   ],
   imports: [
     BrowserModule,
